@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Lodging.Repository\Lodging.DataAccess.csproj" />
+    <ProjectReference Include="..\Lodging.DataAccess\Lodging.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>

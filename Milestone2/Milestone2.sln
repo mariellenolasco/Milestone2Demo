@@ -3,19 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30002.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lodging.DataAccess", "Lodging.Repository\Lodging.DataAccess.csproj", "{C62EEF1E-A624-4412-8241-55D444627E78}"
-	ProjectSection(ProjectDependencies) = postProject
-		{512F67E8-FB6F-4225-AE91-A073BDD68A66} = {512F67E8-FB6F-4225-AE91-A073BDD68A66}
-	EndProjectSection
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lodging.Models.Tests", "Lodging.Model.Tests\Lodging.Models.Tests.csproj", "{6AAAC983-A461-405A-97DD-23D5452306D1}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lodging.Models", "Lodging.Models\Lodging.Models.csproj", "{512F67E8-FB6F-4225-AE91-A073BDD68A66}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lodging.DataAccess.Tests", "Lodging.DataAccess.Tests\Lodging.DataAccess.Tests.csproj", "{5914D45B-64C3-4348-AB57-E44985DF1DC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lodging.DataAccess.Tests", "Lodging.DataAccess.Tests\Lodging.DataAccess.Tests.csproj", "{5914D45B-64C3-4348-AB57-E44985DF1DC9}"
 	ProjectSection(ProjectDependencies) = postProject
-		{C62EEF1E-A624-4412-8241-55D444627E78} = {C62EEF1E-A624-4412-8241-55D444627E78}
+		{F2C4678A-F627-4C40-92D8-1E7B3465E868} = {F2C4678A-F627-4C40-92D8-1E7B3465E868}
+		{512F67E8-FB6F-4225-AE91-A073BDD68A66} = {512F67E8-FB6F-4225-AE91-A073BDD68A66}
 	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lodging.DataAccess", "Lodging.DataAccess\Lodging.DataAccess.csproj", "{F2C4678A-F627-4C40-92D8-1E7B3465E868}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C62EEF1E-A624-4412-8241-55D444627E78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C62EEF1E-A624-4412-8241-55D444627E78}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C62EEF1E-A624-4412-8241-55D444627E78}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C62EEF1E-A624-4412-8241-55D444627E78}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6AAAC983-A461-405A-97DD-23D5452306D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6AAAC983-A461-405A-97DD-23D5452306D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6AAAC983-A461-405A-97DD-23D5452306D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +33,10 @@ Global
 		{5914D45B-64C3-4348-AB57-E44985DF1DC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5914D45B-64C3-4348-AB57-E44985DF1DC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5914D45B-64C3-4348-AB57-E44985DF1DC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2C4678A-F627-4C40-92D8-1E7B3465E868}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2C4678A-F627-4C40-92D8-1E7B3465E868}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2C4678A-F627-4C40-92D8-1E7B3465E868}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2C4678A-F627-4C40-92D8-1E7B3465E868}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
