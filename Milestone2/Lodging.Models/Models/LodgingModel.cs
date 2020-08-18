@@ -25,9 +25,6 @@ namespace Lodging.Models
         /// </summary>
         /// <param name="validationContext"></param>
         /// <returns></returns>
-        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
-        {
-            throw new NotImplementedException();
-        }
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext) => new List<ValidationResult>();
     }
 }
