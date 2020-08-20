@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 
-namespace Lodging.Models
+namespace Lodging.Models.Models
 {
     /// <summary>
     /// Model for the Lodging and all its details
@@ -25,6 +26,18 @@ namespace Lodging.Models
         /// </summary>
         /// <param name="validationContext"></param>
         /// <returns></returns>
-        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext) => new List<ValidationResult>();
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            IEnumerable<ValidationResult> validationResults = new List<ValidationResult>();
+            Validation validator = new Validation();
+
+            var isValidName = validator.ValidateString(Name);
+            var isValidBathroomCount = validator.ValidateDigit(Bathrooms);
+
+            if (isValidName != null) validationResults = validationResults.Append(new ValidationResult(isValidName));
+            if (isValidBathroomCount != null) validationResults = validationResults.Append(new ValidationResult(isValidBathroomCount));
+            validationResults.Concat(Location.Validate(new ValidationContext(Location)));
+            return validationResults;
+        }
     }
 }
