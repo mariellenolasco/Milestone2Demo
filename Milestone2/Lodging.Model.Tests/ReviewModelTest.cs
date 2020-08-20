@@ -21,7 +21,20 @@ namespace Lodging.Models.Tests
             }
           }
         };
-
+        public static readonly IEnumerable<Object[]> _invalidReviews = new List<Object[]>
+        {
+          new object[]
+          {
+            new ReviewModel()
+            {
+              Id = 0,
+              AccountId = 0,
+              Comment = "",
+              DateCreated = DateTime.Now,
+              Rating = -1
+            }
+          }
+        };
         [Theory]
         [MemberData(nameof(_reviews))]
         public void Test_Create_ReviewModel(ReviewModel review)
@@ -39,6 +52,15 @@ namespace Lodging.Models.Tests
             var validationContext = new ValidationContext(review);
 
             Assert.Empty(review.Validate(validationContext));
+        }
+
+        [Theory]
+        [MemberData(nameof(_invalidReviews))]
+        public void Test_Validate_InvalidReviewModel(ReviewModel review)
+        {
+            var validationContext = new ValidationContext(review);
+
+            Assert.NotEmpty(review.Validate(validationContext));
         }
     }
 }

@@ -22,6 +22,21 @@ namespace Lodging.Models.Tests
           }
         };
 
+        public static readonly IEnumerable<Object[]> _invalidLocations = new List<Object[]>
+        {
+          new object[]
+          {
+            new LocationModel()
+            {
+              Id = 0,
+              Address = new AddressModel(),
+              Latitude = "",
+              Locale = "",
+              Longitude = ""
+            }
+          }
+        };
+
         [Theory]
         [MemberData(nameof(_locations))]
         public void Test_Create_LocationModel(LocationModel location)
@@ -39,6 +54,15 @@ namespace Lodging.Models.Tests
             var validationContext = new ValidationContext(location);
 
             Assert.Empty(location.Validate(validationContext));
+        }
+
+        [Theory]
+        [MemberData(nameof(_invalidLocations))]
+        public void Test_Validate_InvalidLocationModel(LocationModel location)
+        {
+            var validationContext = new ValidationContext(location);
+
+            Assert.NotEmpty(location.Validate(validationContext));
         }
     }
 }

@@ -22,7 +22,21 @@ namespace Lodging.Models.Tests
             }
           }
         };
-
+        public static readonly IEnumerable<Object[]> _invalidAddresses = new List<Object[]>
+        {
+          new object[]
+          {
+            new AddressModel()
+            {
+              Id = 0,
+              City = "",
+              Country = "",
+              PostalCode = "",
+              StateProvince = "",
+              Street = ""
+            }
+          }
+        };
         [Theory]
         [MemberData(nameof(_addresses))]
         public void Test_Create_AddressModel(AddressModel address)
@@ -40,6 +54,14 @@ namespace Lodging.Models.Tests
             var validationContext = new ValidationContext(address);
 
             Assert.Empty(address.Validate(validationContext));
+        }
+        [Theory]
+        [MemberData(nameof(_invalidAddresses))]
+        public void Test_Validate_InvalidAddressModel(AddressModel address)
+        {
+            var validationContext = new ValidationContext(address);
+
+            Assert.NotEmpty(address.Validate(validationContext));
         }
     }
 }

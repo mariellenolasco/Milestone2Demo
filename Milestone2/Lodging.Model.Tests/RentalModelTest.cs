@@ -23,6 +23,22 @@ namespace Lodging.Models.Tests
           }
         };
 
+        public static readonly IEnumerable<Object[]> _invalidRentals = new List<Object[]>
+        {
+          new object[]
+          {
+            new RentalModel()
+            {
+              Id = 0,
+              Name = "name",
+              Occupancy = -4,
+              Type = "camptype",
+              Status = "available",
+              Price = -20.00
+            }
+          }
+        };
+
         [Theory]
         [MemberData(nameof(_rentals))]
         public void Test_Create_RentalModel(RentalModel rental)
@@ -40,6 +56,15 @@ namespace Lodging.Models.Tests
             var validationContext = new ValidationContext(rental);
 
             Assert.Empty(rental.Validate(validationContext));
+        }
+
+        [Theory]
+        [MemberData(nameof(_invalidRentals))]
+        public void Test_Validate_InvalidRentalModel(RentalModel rental)
+        {
+            var validationContext = new ValidationContext(rental);
+
+            Assert.NotEmpty(rental.Validate(validationContext));
         }
     }
 }
