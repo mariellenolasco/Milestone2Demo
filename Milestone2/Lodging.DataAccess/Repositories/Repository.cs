@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -17,14 +18,14 @@ namespace Lodging.DataAccess.Repositories
             _db = context.Set<TEntity>();
         }
 
-        public virtual async Task DeleteAsync(int id) => _db.Remove(await SelectAsync(id));
+        public virtual async Task DeleteAsync(int id) => throw new NotImplementedException();
 
-        public virtual async Task InsertAsync(TEntity entry) => await _db.AddAsync(entry).ConfigureAwait(true);
+        public virtual async Task InsertAsync(TEntity entry) => throw new NotImplementedException();
 
         public virtual async Task<IEnumerable<TEntity>> SelectAsync() => await _db.ToListAsync();
 
-        public virtual async Task<TEntity> SelectAsync(int id) => await _db.FindAsync(id).ConfigureAwait(true);
+        public virtual async Task<TEntity> SelectAsync(int id) => throw new NotImplementedException();
 
-        public virtual void Update(TEntity entry) => _db.Update(entry);
+        public virtual void Update(TEntity entry) => throw new NotImplementedException();
     }
 }
