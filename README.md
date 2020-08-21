@@ -2,7 +2,7 @@
 Milestone 2 base code for the corporate batch
 
 ## Overview
-The Lodging API needs to be able to store, access and update data! The database is being developed to store the data from the end users. Implementation for data access methods are needed for the API to be able to perform queries to the database. 
+The Lodging API needs to be able to store, access, and update data! The database is being developed to store the data from the end users. Implementation for data access methods are needed for the API to be able to perform queries to the database. 
 
 ### Goal
 Your goal as a developer is to use LINQ to provide the missing repository implementation such that it:
